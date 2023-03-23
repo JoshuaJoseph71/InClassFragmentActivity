@@ -41,10 +41,12 @@ class ImageDisplayFragment : Fragment() {
             mainViewModel.getImageIds().observe(requireActivity()){
                 adapter = CustomRecyclerAdapter(it)
             }
-
-            adapter = CustomRecyclerAdapter(images)
             layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
 
+}
+
+interface itemSelectedInterface{
+    fun itemSelected(item : Int)
 }
